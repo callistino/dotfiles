@@ -1,0 +1,1 @@
+{".text.html.twig":{"trans":{"prefix":"trans","body":"{% trans %}${0}{% endtrans %}"}}}

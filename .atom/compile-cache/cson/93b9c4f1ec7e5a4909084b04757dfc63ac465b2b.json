@@ -1,0 +1,1 @@
+{".source.php":{"sftextcolumn":{"prefix":"sftextcolumn","body":"/**\n * @ORM\\Column(type=\"text\"${0:})\n */"}}}

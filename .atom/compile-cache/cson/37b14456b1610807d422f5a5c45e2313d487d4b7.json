@@ -1,0 +1,1 @@
+{"context-menu":{".overlayer":{"Enable composer":"composer:toggle"}},"menu":[{"label":"Packages","submenu":[{"label":"composer","submenu":[{"label":"Toggle","command":"composer:toggle"}]}]}]}

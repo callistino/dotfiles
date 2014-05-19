@@ -1,0 +1,1 @@
+{".source.php":{"sfaction":{"prefix":"sfaction","body":"public function ${1:index}Action(${2:Request $request})\n{\n    return $this->render('${3:index}.html.twig');\n}"}}}

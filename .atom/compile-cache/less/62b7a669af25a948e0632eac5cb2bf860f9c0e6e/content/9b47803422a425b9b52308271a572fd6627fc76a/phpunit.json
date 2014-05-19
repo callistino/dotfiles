@@ -1,0 +1,1 @@
+{"digest":"97c87916cca22c475b7a0ae85f9ac8eeb84b32f9","css":".phpunit-container {\n  color: white;\n  max-height: 250px;\n  overflow: scroll;\n  padding: 10px;\n  border-top: 1px solid #ccc;\n}\n","imports":[{"path":"node_modules/atom-dark-ui/stylesheets/ui-variables.less","digest":"cb44f81ae3c9a67f02553cbee52b63bb3ed6c69b"}],"version":1}

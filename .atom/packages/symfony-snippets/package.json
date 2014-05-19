@@ -1,0 +1,26 @@
+{
+  "name": "symfony-snippets",
+  "version": "0.3.0",
+  "description": "Symony2 snippets to help you writing code",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruian/atom-symfony-snippets"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {},
+  "readme": "# symfony-snippets package\n\n[A portage of the Sublime text package](https://github.com/raulfraile/sublime-symfony2)\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/ruian/atom-symfony-snippets/issues"
+  },
+  "homepage": "https://github.com/ruian/atom-symfony-snippets",
+  "_id": "symfony-snippets@0.3.0",
+  "dist": {
+    "shasum": "2f6bbc10365c5a05e999d4f06a8ff240790cad96"
+  },
+  "_resolved": "/var/folders/67/nsxhqw012gn7xl25bwmd9r2w0000gn/T/d-11436-2103-9yxho0/package.tgz",
+  "_from": "/var/folders/67/nsxhqw012gn7xl25bwmd9r2w0000gn/T/d-11436-2103-9yxho0/package.tgz"
+}

@@ -1,0 +1,1 @@
+{".source.php":{"sfentity":{"prefix":"sfentity","body":"/**\n * @ORM\\Entity()\n * @ORM\\Table(name=\"${1:name}\")\n */"}}}

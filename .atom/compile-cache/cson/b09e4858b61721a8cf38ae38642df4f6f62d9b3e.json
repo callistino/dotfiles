@@ -1,0 +1,1 @@
+{".source.php":{"sfdatecolumn":{"prefix":"sfdatecolumn","body":"/**\n * @ORM\\Column(type=\"date\"${0:})\n */"}}}

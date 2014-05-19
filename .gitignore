@@ -8,7 +8,14 @@ Desktop.ini
 # Thumbnail cache files
 ._*
 Thumbs.db
+*.swp
+*.un~
 
 # Files that might appear on external disks
 .Spotlight-V100
 .Trashes
+
+# Project files
+play.php
+tags
+node_modules/

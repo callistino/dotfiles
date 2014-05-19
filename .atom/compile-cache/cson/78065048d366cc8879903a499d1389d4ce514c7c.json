@@ -1,0 +1,1 @@
+{".source.php":{"sfconstraint":{"prefix":"sfconstraint","body":"use Symfony\\Component\\Validator\\Constraint;\n\n/**\n * @Annotation\n */\nclass ${1:Name}Constraint extends Constraint\n{\n    public $message = '${2:}';\n}"}}}

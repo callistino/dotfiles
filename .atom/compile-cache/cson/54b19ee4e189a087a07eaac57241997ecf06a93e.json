@@ -1,0 +1,1 @@
+{".source.php":{"sfgetsession":{"prefix":"sfgetsession","body":"$this->getRequest()->getSession();"}}}

@@ -1,0 +1,1 @@
+{".source.php":{"sfintegercolumn":{"prefix":"sfintegercolumn","body":"/**\n * @ORM\\Column(type=\"integer\"${0})\n */"}}}

@@ -1,0 +1,27 @@
+{
+  "name": "color-picker",
+  "main": "./lib/ColorPicker",
+  "version": "0.14.2",
+  "private": true,
+  "description": "A Color Picker for the Atom Editor. Right click a color and select color picker to open it.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomaslindstrom/color-picker"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "readme": "# A Color Picker for Atom\n\nA color picker for Atom. Either right click a color and select `Color picker`, or place the cursor on a color and hit `CMD-SHIFT-C`. Currently reads HEX, HEXA, RGB, RGBA, HSL and HSLA.\n\nInspects Sass/LESS variables! [Take a look here.](http://t.hom.as/colorpicker4.mov)\n\n**NEW:** Now also reads HSL and HSLA!\n\n## Preview\n\n![Color Picker in action](http://f.cl.ly/items/3g3T401o0o0F2m2O1z1K/output.gif)\n\n## To do\n\n- Code cleanup\n- Preview color manipulation functions (lighten, darken)\n- Convertions\n- Stylus variable lookup\n- Edit the color value\n- Tests\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/thomaslindstrom/color-picker/issues"
+  },
+  "homepage": "https://github.com/thomaslindstrom/color-picker",
+  "_id": "color-picker@0.14.2",
+  "dist": {
+    "shasum": "928ea195473e8b9a046a800a694ba8a0fb1e6140"
+  },
+  "_resolved": "/var/folders/67/nsxhqw012gn7xl25bwmd9r2w0000gn/T/d-11436-2051-j6bt47/package.tgz",
+  "_from": "/var/folders/67/nsxhqw012gn7xl25bwmd9r2w0000gn/T/d-11436-2051-j6bt47/package.tgz"
+}

@@ -1,0 +1,1 @@
+{".source.php":{"sffloatcolumn":{"prefix":"sffloatcolumn","body":"/**\n * @ORM\\Column(type=\"float\"${0:})\n */"}}}

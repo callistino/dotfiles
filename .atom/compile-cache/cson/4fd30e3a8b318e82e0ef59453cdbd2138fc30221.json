@@ -1,0 +1,1 @@
+{".source.php":{"sfsetflash":{"prefix":"sfsetflash","body":"$this->get('session')->getFlashBag()->add('${1:type}', '${2:message}');"}}}

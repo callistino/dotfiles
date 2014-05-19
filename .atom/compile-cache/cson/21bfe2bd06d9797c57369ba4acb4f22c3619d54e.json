@@ -1,0 +1,1 @@
+{".source.php":{"sfdocumentclass":{"prefix":"sfdocumentclass","body":"use Doctrine\\ODM\\MongoDB\\Mapping\\Annotations as MongoDB;\nuse Symfony\\Component\\Validator\\Constraints as Assert;\n\n/**\n * @MongoDB\\Document(collection=\"${1:}\", repositoryClass=\"${2:}\")\n */\nclass ${3:Document}\n{\n    /**\n     * @MongoDB\\Id()\n     */\n    protected $id;${0:}\n}"}}}

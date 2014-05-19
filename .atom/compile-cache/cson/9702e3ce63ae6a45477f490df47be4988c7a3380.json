@@ -1,0 +1,1 @@
+{".source.php":{"sfcontroller":{"prefix":"sfcontroller","body":"use Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller;\nuse Symfony\\Component\\HttpFoundation\\Request;\n\nclass ${1:Default}Controller extends Controller\n{\n    public function ${2:index}Action(${3:Request $request})\n    {\n        return $this->render('${4:index}.html.twig');\n    }\n}"}}}

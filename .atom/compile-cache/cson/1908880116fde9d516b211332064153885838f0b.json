@@ -1,0 +1,1 @@
+{".source.php":{"sfidcolumn":{"prefix":"sfidcolumn","body":"/**\n * @ORM\\Column(name=\"id\", type=\"integer\", nullable=false)\n * @ORM\\Id()\n * @ORM\\GeneratedValue(strategy=\"IDENTITY\")\n */"}}}

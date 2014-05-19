@@ -1,0 +1,1 @@
+{".source.php":{"sfdecimalcolumn":{"prefix":"sfdecimalcolumn","body":"/**\n * @ORM\\Column(type=\"decimal\"${0:})\n */"}}}

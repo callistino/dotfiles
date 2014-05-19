@@ -1,0 +1,1 @@
+{".source.php":{"sfarraycolumn":{"prefix":"sfarraycolumn","body":"/**\n * @ORM\\Column(type=\"array\"${0:})\n */"}}}

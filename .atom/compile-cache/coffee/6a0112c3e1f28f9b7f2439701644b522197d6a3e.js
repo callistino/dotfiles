@@ -1,0 +1,54 @@
+(function() {
+  var PHPUnitView, fs, path, spawn;
+
+  fs = require('fs');
+
+  path = require('path');
+
+  spawn = require('child_process').spawn;
+
+  PHPUnitView = require('./test-status-view');
+
+  module.exports = {
+    configDefaults: {
+      phpunitExecutablePath: '/usr/local/bin/phpunit'
+    },
+    activate: function() {
+      return atom.workspaceView.command("phpunit:test", (function(_this) {
+        return function() {
+          return _this.check();
+        };
+      })(this));
+    },
+    check: function() {
+      var command, phpunitPanel, projectPath, tail;
+      phpunitPanel = atom.workspaceView.find(".phpunit-container");
+      atom.workspaceView.find(".phpunit-contents").html("");
+      if (!phpunitPanel.is(":visible")) {
+        atom.workspaceView.prependToBottom(new PHPUnitView);
+      }
+      projectPath = atom.project.getPath();
+      command = atom.config.get("phpunit.phpunitExecutablePath");
+      tail = spawn(command, ['--configuration ' + projectPath]);
+      tail.stdout.on("data", function(data) {
+        var breakTag;
+        breakTag = "<br>";
+        data = (data + "").replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, "$1" + breakTag + "$2");
+        atom.workspaceView.find(".phpunit-contents").append("" + data);
+        return atom.workspaceView.find(".phpunit-contents").scrollToBottom();
+      });
+      tail.stderr.on("data", function(data) {
+        return console.log("stderr: " + data);
+      });
+      return tail.on("close", function(code) {
+        atom.workspaceView.find(".phpunit-contents").append("<br>Complete<br>");
+        atom.workspaceView.find(".phpunit-contents").scrollToBottom();
+        return console.log("child process exited with code " + code);
+      });
+    }
+  };
+
+}).call(this);
+
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAiZmlsZSI6ICIiLAogICJzb3VyY2VSb290IjogIiIsCiAgInNvdXJjZXMiOiBbCiAgICAiIgogIF0sCiAgIm5hbWVzIjogW10sCiAgIm1hcHBpbmdzIjogIkFBQUE7QUFBQSxNQUFBLDRCQUFBOztBQUFBLEVBQUEsRUFBQSxHQUFLLE9BQUEsQ0FBUSxJQUFSLENBQUwsQ0FBQTs7QUFBQSxFQUNBLElBQUEsR0FBTyxPQUFBLENBQVEsTUFBUixDQURQLENBQUE7O0FBQUEsRUFFQyxRQUFTLE9BQUEsQ0FBUSxlQUFSLEVBQVQsS0FGRCxDQUFBOztBQUFBLEVBS0EsV0FBQSxHQUFjLE9BQUEsQ0FBUSxvQkFBUixDQUxkLENBQUE7O0FBQUEsRUFPQSxNQUFNLENBQUMsT0FBUCxHQUNJO0FBQUEsSUFBQSxjQUFBLEVBQ0k7QUFBQSxNQUFBLHFCQUFBLEVBQXVCLHdCQUF2QjtLQURKO0FBQUEsSUFHQSxRQUFBLEVBQVUsU0FBQSxHQUFBO2FBQ1IsSUFBSSxDQUFDLGFBQWEsQ0FBQyxPQUFuQixDQUEyQixjQUEzQixFQUEyQyxDQUFBLFNBQUEsS0FBQSxHQUFBO2VBQUEsU0FBQSxHQUFBO2lCQUFHLEtBQUMsQ0FBQSxLQUFELENBQUEsRUFBSDtRQUFBLEVBQUE7TUFBQSxDQUFBLENBQUEsQ0FBQSxJQUFBLENBQTNDLEVBRFE7SUFBQSxDQUhWO0FBQUEsSUFNQSxLQUFBLEVBQU8sU0FBQSxHQUFBO0FBQ0gsVUFBQSx3Q0FBQTtBQUFBLE1BQUEsWUFBQSxHQUFlLElBQUksQ0FBQyxhQUFhLENBQUMsSUFBbkIsQ0FBd0Isb0JBQXhCLENBQWYsQ0FBQTtBQUFBLE1BQ0EsSUFBSSxDQUFDLGFBQWEsQ0FBQyxJQUFuQixDQUF3QixtQkFBeEIsQ0FBNEMsQ0FBQyxJQUE3QyxDQUFrRCxFQUFsRCxDQURBLENBQUE7QUFFQSxNQUFBLElBQUEsQ0FBQSxZQUFzRSxDQUFDLEVBQWIsQ0FBZ0IsVUFBaEIsQ0FBMUQ7QUFBQSxRQUFBLElBQUksQ0FBQyxhQUFhLENBQUMsZUFBbkIsQ0FBbUMsR0FBQSxDQUFBLFdBQW5DLENBQUEsQ0FBQTtPQUZBO0FBQUEsTUFLQSxXQUFBLEdBQWMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxPQUFiLENBQUEsQ0FMZCxDQUFBO0FBQUEsTUFNQSxPQUFBLEdBQVUsSUFBSSxDQUFDLE1BQU0sQ0FBQyxHQUFaLENBQWdCLCtCQUFoQixDQU5WLENBQUE7QUFBQSxNQU9BLElBQUEsR0FBTyxLQUFBLENBQU0sT0FBTixFQUFlLENBQUMsa0JBQUEsR0FBcUIsV0FBdEIsQ0FBZixDQVBQLENBQUE7QUFBQSxNQVNBLElBQUksQ0FBQyxNQUFNLENBQUMsRUFBWixDQUFlLE1BQWYsRUFBdUIsU0FBQyxJQUFELEdBQUE7QUFDbkIsWUFBQSxRQUFBO0FBQUEsUUFBQSxRQUFBLEdBQVcsTUFBWCxDQUFBO0FBQUEsUUFDQSxJQUFBLEdBQU8sQ0FBQyxJQUFBLEdBQU8sRUFBUixDQUFXLENBQUMsT0FBWixDQUFvQiwrQkFBcEIsRUFBcUQsSUFBQSxHQUFPLFFBQVAsR0FBa0IsSUFBdkUsQ0FEUCxDQUFBO0FBQUEsUUFFQSxJQUFJLENBQUMsYUFBYSxDQUFDLElBQW5CLENBQXdCLG1CQUF4QixDQUE0QyxDQUFDLE1BQTdDLENBQW9ELEVBQUEsR0FBRSxJQUF0RCxDQUZBLENBQUE7ZUFHQSxJQUFJLENBQUMsYUFBYSxDQUFDLElBQW5CLENBQXdCLG1CQUF4QixDQUE0QyxDQUFDLGNBQTdDLENBQUEsRUFKbUI7TUFBQSxDQUF2QixDQVRBLENBQUE7QUFBQSxNQWVBLElBQUksQ0FBQyxNQUFNLENBQUMsRUFBWixDQUFlLE1BQWYsRUFBdUIsU0FBQyxJQUFELEdBQUE7ZUFDbkIsT0FBTyxDQUFDLEdBQVIsQ0FBWSxVQUFBLEdBQWEsSUFBekIsRUFEbUI7TUFBQSxDQUF2QixDQWZBLENBQUE7YUFrQkEsSUFBSSxDQUFDLEVBQUwsQ0FBUSxPQUFSLEVBQWlCLFNBQUMsSUFBRCxHQUFBO0FBQ2IsUUFBQSxJQUFJLENBQUMsYUFBYSxDQUFDLElBQW5CLENBQXdCLG1CQUF4QixDQUE0QyxDQUFDLE1BQTdDLENBQW9ELGtCQUFwRCxDQUFBLENBQUE7QUFBQSxRQUNBLElBQUksQ0FBQyxhQUFhLENBQUMsSUFBbkIsQ0FBd0IsbUJBQXhCLENBQTRDLENBQUMsY0FBN0MsQ0FBQSxDQURBLENBQUE7ZUFFQSxPQUFPLENBQUMsR0FBUixDQUFZLGlDQUFBLEdBQW9DLElBQWhELEVBSGE7TUFBQSxDQUFqQixFQW5CRztJQUFBLENBTlA7R0FSSixDQUFBO0FBQUEiCn0=
+//# sourceURL=/Users/rpelayo/.atom/packages/phpunit/lib/phpunit.coffee

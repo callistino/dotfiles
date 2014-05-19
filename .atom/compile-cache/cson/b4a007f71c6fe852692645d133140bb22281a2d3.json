@@ -1,0 +1,1 @@
+{".source.yml .source.yaml":{"sfroute":{"prefix":"sfroute","body":"${1:route_name}:\n    path:      ${2:/}\n    defaults:  { _controller: ${3:Bundle:Controller:action} }"}}}

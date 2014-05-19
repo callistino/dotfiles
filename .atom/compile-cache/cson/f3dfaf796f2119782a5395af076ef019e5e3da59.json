@@ -1,0 +1,1 @@
+{".source.php":{"sfrepository":{"prefix":"sfrepository","body":"use Doctrine\\ORM\\EntityRepository;\n\nclass ${3:EntityName}Repository extends EntityRepository\n{${0:}\n}"}}}

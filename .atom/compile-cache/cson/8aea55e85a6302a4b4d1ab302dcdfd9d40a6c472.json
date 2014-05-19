@@ -1,0 +1,1 @@
+{".source.php":{"sfbigintcolumn":{"prefix":"sfbigintcolumn","body":"/**\n * @ORM\\Column(type=\"bigint\"${0:})\n */"}}}

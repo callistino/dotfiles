@@ -62,6 +62,10 @@
 	remote = origin
 	merge = refs/heads/master
 
+[user]
+	name = Reinier Pelayo
+	email = 
+
 # URL shorthands
 [url "git@github.com:"]
 	insteadOf = "gh:"

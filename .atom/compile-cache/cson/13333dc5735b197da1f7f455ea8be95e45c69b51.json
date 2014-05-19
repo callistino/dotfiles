@@ -1,0 +1,1 @@
+{".source.php":{"sfonetomanycolumn":{"prefix":"sfonetomanycolumn","body":"/**\n * @ORM\\OneToMany(targetEntity=\"${1:}\", mappedBy=\"${2:}\")\n */"}}}

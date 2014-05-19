@@ -1,0 +1,1 @@
+{".source.php":{"sfbooleancolumn":{"prefix":"sfbooleancolumn","body":"/**\n * @ORM\\Column(type=\"boolean\"${0:})\n */"}}}

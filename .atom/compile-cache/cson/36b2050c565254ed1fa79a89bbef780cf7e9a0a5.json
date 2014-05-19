@@ -1,0 +1,1 @@
+{".source.php":{"sfactiona":{"prefix":"sfactiona","body":"/**\n * @Route(\"${1:/}\"${2:, name=\"${3:name}\"}${4:, requirements=\"${5:requirements}\"}${6:, defaults=\"${7:defaults}\"})\n * @Template()\n */\npublic function ${8:index}Action(${9:Request $request})\n{\n    ${0:// Logic}\n}"}}}

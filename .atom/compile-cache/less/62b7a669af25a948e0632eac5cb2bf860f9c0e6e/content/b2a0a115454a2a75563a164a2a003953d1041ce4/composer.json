@@ -1,0 +1,1 @@
+{"digest":"8cc2bc55d6acb0a895faa009a259f35ed3e903ef","css":".composer-container {\n  color: white;\n  max-height: 250px;\n  overflow: scroll;\n  padding: 10px;\n  border-top: 1px solid #ccc;\n}\n","imports":[{"path":"node_modules/atom-dark-ui/stylesheets/ui-variables.less","digest":"cb44f81ae3c9a67f02553cbee52b63bb3ed6c69b"}],"version":1}
